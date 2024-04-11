@@ -92,7 +92,7 @@ public:
 };
 
 // Implementación concreta de la gestión de proyectos
-class GestionProyectosImpl : public GestionProyectos {
+class GestionProyectosImpl : public GestionProyectos {    //GestionProyectosImpl en este caso seria el hijo el cual hereda del padre
 private:
     vector<Proyecto> proyectos;
 
