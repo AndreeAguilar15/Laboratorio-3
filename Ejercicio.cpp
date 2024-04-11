@@ -4,16 +4,14 @@
 
 using namespace std;
 
-// Interfaz para la gestión de proyectos
-class GestionProyectos {    //GestionProyectos seria el padre (Sustitucion de liskov)
+// Interfaz para la gestión de proyectos (Open-Closed,Segregacion de interfaz,Inversion de dependencia)
+class GestionProyectos {
 public:
-    //Virtual es una funcion miembro que se espera volver a definir en clases derivadas
-    //Tambien se puede sobreecribir con el "override"
     virtual void agregarProyecto(string descripcion, string fechaInicio, string fechaLimite) = 0;
     virtual void mostrarProyectos() const = 0;
 };
 
-// Clase para representar un proyecto
+// Clase para representar un proyecto (Single responsability)
 class Proyecto {
 private:
     string descripcion;
@@ -37,14 +35,14 @@ public:
     }
 };
 
-// Interfaz para la gestión de comentarios
+// Interfaz para la gestión de comentarios (Open-Closed,Segregacion de interfaz,Inversion de dependencia)
 class GestionComentarios {
 public:
     virtual void agregarComentario(string autor, string contenido) = 0;
     virtual void mostrarComentarios() const = 0;
 };
 
-// Clase para representar un comentario
+// Clase para representar un comentario (Single responsability)
 class Comentario {
 private:
     string autor;
@@ -62,14 +60,14 @@ public:
     }
 };
 
-// Interfaz para la gestión de archivos compartidos
+// Interfaz para la gestión de archivos compartidos (Open-Closed,Segregacion de interfaz,Inversion de dependencia)
 class GestionArchivosCompartidos {
 public:
     virtual void agregarArchivoCompartido(string nombre, string ubicacion, int tamano) = 0;
     virtual void mostrarArchivosCompartidos() const = 0;
 };
 
-// Clase para representar un archivo compartido
+// Clase para representar un archivo compartido (Single Responsability)
 class ArchivoCompartido {
 private:
     string nombre;
@@ -93,8 +91,8 @@ public:
     }
 };
 
-// Implementación concreta de la gestión de proyectos
-class GestionProyectosImpl : public GestionProyectos {    //GestionProyectosImpl en este caso seria el hijo el cual hereda del padre (Sustitucion liskov)
+// Implementación concreta de la gestión de proyectos (Sust. de Liskov)
+class GestionProyectosImpl : public GestionProyectos {
 private:
     vector<Proyecto> proyectos;
 
@@ -113,7 +111,7 @@ public:
     }
 };
 
-// Implementación concreta de la gestión de comentarios
+// Implementación concreta de la gestión de comentarios (Sust. de Liskov)
 class GestionComentariosImpl : public GestionComentarios {
 private:
     vector<Comentario> comentarios;
@@ -132,7 +130,7 @@ public:
     }
 };
 
-// Implementación concreta de la gestión de archivos compartidos
+// Implementación concreta de la gestión de archivos compartidos (Sust. de Liskov, Inversion de dependencia)
 class GestionArchivosCompartidosImpl : public GestionArchivosCompartidos {
 private:
     vector<ArchivoCompartido> archivosCompartidos;
