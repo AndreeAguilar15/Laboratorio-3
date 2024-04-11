@@ -92,7 +92,7 @@ public:
 };
 
 // Implementación concreta de la gestión de proyectos
-class GestionProyectosImpl : public GestionProyectos {    //GestionProyectosImpl en este caso seria el hijo el cual hereda del padre
+class GestionProyectosImpl : public GestionProyectos {    //GestionProyectosImpl en este caso seria el hijo el cual hereda del padre (Sustitucion liskov)
 private:
     vector<Proyecto> proyectos;
 
