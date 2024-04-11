@@ -9,6 +9,7 @@ class GestionProyectos {
 public:
 //función virtual es una función miembro que se espera volver a definir en clases derivadas
 //Tambien puede ser sobreescribida por el override
+//El override transcribe encima del codigo
     virtual void agregarProyecto(string descripcion, string fechaInicio, string fechaLimite) = 0;
     virtual void mostrarProyectos() const = 0;
 };
