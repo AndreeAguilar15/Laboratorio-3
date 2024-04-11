@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <ctime>
 
 using namespace std;
 
@@ -48,10 +47,9 @@ class Comentario {
 private:
     string autor;
     string contenido;
-    time_t fecha;
 
 public:
-    Comentario(string autor, string contenido) : autor(autor), contenido(contenido), fecha(time(nullptr)) {}
+    Comentario(string autor, string contenido) : autor(autor), contenido(contenido) {}
 
     string getAutor() const {
         return autor;
@@ -59,10 +57,6 @@ public:
 
     string getContenido() const {
         return contenido;
-    }
-
-    time_t getFecha() const {
-        return fecha;
     }
 };
 
@@ -132,7 +126,6 @@ public:
         for (const auto& comentario : comentarios) {
             cout << "Autor: " << comentario.getAutor()
                  << ", Contenido: " << comentario.getContenido();
-//                 << ", Fecha: " << asctime(localtime(&comentario.getFecha()));
         }
     }
 };
