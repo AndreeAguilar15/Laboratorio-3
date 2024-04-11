@@ -5,7 +5,7 @@
 using namespace std;
 
 // Interfaz para la gestión de proyectos
-class GestionProyectos {
+class GestionProyectos {    //GestionProyectos seria el padre (Sustitucion de liskov)
 public:
     virtual void agregarProyecto(string descripcion, string fechaInicio, string fechaLimite) = 0;
     virtual void mostrarProyectos() const = 0;
