@@ -7,6 +7,8 @@ using namespace std;
 // Interfaz para la gestión de proyectos
 class GestionProyectos {    //GestionProyectos seria el padre (Sustitucion de liskov)
 public:
+    //Virtual es una funcion miembro que se espera volver a definir en clases derivadas
+    //Tambien se puede sobreecribir con el "override"
     virtual void agregarProyecto(string descripcion, string fechaInicio, string fechaLimite) = 0;
     virtual void mostrarProyectos() const = 0;
 };
